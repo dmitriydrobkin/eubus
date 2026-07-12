@@ -7,19 +7,12 @@ import clsx from 'clsx';
 import { Dictionary } from '@/i18n/dictionaries';
 
 export default function Header({ dict }: { dict: Dictionary['nav'] }) {
-  const [scrollState, setScrollState] = useState<'top' | 'hidden' | 'scrolled'>('top');
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isContactsOpen, setIsContactsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY < 100) {
-        setScrollState('top');
-      } else if (scrollY >= 100 && scrollY < 500) {
-        setScrollState('hidden');
-      } else {
-        setScrollState('scrolled');
-      }
+      setIsScrolled(window.scrollY > 500);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -50,10 +43,10 @@ export default function Header({ dict }: { dict: Dictionary['nav'] }) {
       <nav
         id="main-nav"
         className={clsx(
-          'w-full z-50 flex justify-between items-center mx-auto px-6 lg:px-8 h-20 transition-all duration-500',
-          scrollState === 'top' && 'absolute top-0 bg-transparent opacity-100 translate-y-0',
-          scrollState === 'hidden' && 'fixed top-0 bg-surface-container/90 -translate-y-full opacity-0 pointer-events-none',
-          scrollState === 'scrolled' && 'fixed top-0 bg-surface-container/90 border-b border-surface-variant/30 backdrop-blur-md shadow-lg translate-y-0 opacity-100'
+          'w-full z-50 flex justify-between items-center mx-auto px-6 lg:px-8 h-20 transition-colors duration-300',
+          isScrolled
+            ? 'fixed top-0 bg-surface-container/90 border-b border-surface-variant/30 backdrop-blur-md shadow-lg animate-slide-down'
+            : 'absolute top-0 bg-transparent'
         )}
       >
         <div className="w-full max-w-container-max mx-auto flex justify-between items-center">
