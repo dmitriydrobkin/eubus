@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EU BUS - Відгуки</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;480&amp;family=Sora:wght@480;530&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#c5c5d7",
+                        "surface": "#12131b",
+                        "primary-fixed-dim": "#bbc3ff",
+                        "on-tertiary-fixed-variant": "#743500",
+                        "mist-border": "#e2e3ed",
+                        "pure-white": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb689",
+                        "primary-fixed": "#dfe0ff",
+                        "on-tertiary": "#512300",
+                        "on-primary-fixed": "#000d60",
+                        "secondary-fixed-dim": "#c7c5d5",
+                        "on-secondary-fixed": "#1a1a26",
+                        "tertiary": "#ffb689",
+                        "primary": "#bbc3ff",
+                        "inverse-on-surface": "#2f3038",
+                        "on-tertiary-container": "#fffaf9",
+                        "surface-tint": "#bbc3ff",
+                        "surface-container-highest": "#34343d",
+                        "surface-container": "#1e1f27",
+                        "onyx-canvas": "#171721",
+                        "ivory-text": "#ededf3",
+                        "on-primary-fixed-variant": "#1b33bc",
+                        "slate-border": "#70707d",
+                        "secondary-fixed": "#e3e0f1",
+                        "primary-container": "#5266eb",
+                        "on-primary": "#001b97",
+                        "on-secondary": "#2f2f3c",
+                        "surface-container-lowest": "#0d0e15",
+                        "tertiary-fixed": "#ffdbc8",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#292932",
+                        "on-primary-container": "#fdfaff",
+                        "surface-dim": "#12131b",
+                        "outline": "#8f8fa0",
+                        "background": "#12131b",
+                        "secondary": "#c7c5d5",
+                        "outline-variant": "#454654",
+                        "ash-text": "#c3c3cc",
+                        "surface-variant": "#34343d",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#b95801",
+                        "inverse-primary": "#3a4fd4",
+                        "obsidian-button": "#272735",
+                        "surface-bright": "#383841",
+                        "on-surface": "#e3e1ed",
+                        "secondary-container": "#464553",
+                        "on-secondary-container": "#b5b3c3",
+                        "surface-container-low": "#1a1b23",
+                        "on-secondary-fixed-variant": "#464553",
+                        "on-tertiary-fixed": "#321300",
+                        "on-error": "#690005",
+                        "on-background": "#e3e1ed",
+                        "inverse-surface": "#e3e1ed",
+                        "error": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "card": "12px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "section-gap": "72px",
+                        "card-padding": "32px",
+                        "element-gap": "12px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "display": ["Sora", "sans-serif"],
+                        "headline-sm": ["Sora", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "subheading": ["Inter", "sans-serif"],
+                        "caption": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-lg": ["Sora", "sans-serif"],
+                        "headline-md": ["Sora", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display": ["65px", { "lineHeight": "1.1", "letterSpacing": "0em", "fontWeight": "530" }],
+                        "headline-sm": ["28px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "480" }],
+                        "body-sm": ["14px", { "lineHeight": "1", "letterSpacing": "0.005em", "fontWeight": "400" }],
+                        "subheading": ["21px", { "lineHeight": "1.35", "letterSpacing": "0em", "fontWeight": "480" }],
+                        "caption": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "480" }],
+                        "body-lg": ["18px", { "lineHeight": "1.35", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["42px", { "lineHeight": "1.15", "letterSpacing": "0.01em", "fontWeight": "480" }],
+                        "headline-md": ["32px", { "lineHeight": "1.15", "letterSpacing": "0.015em", "fontWeight": "480" }],
+                        "body": ["16px", { "lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-onyx-canvas text-ivory-text font-body antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md flex justify-between items-center max-w-container-max mx-auto px-8 h-20">
+<div class="font-display text-headline-sm font-bold text-ivory-text">
+            EU BUS
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-ivory-text font-body hover:text-primary transition-colors duration-300 scale-95 transition-transform duration-200" href="#">Розклад</a>
+<a class="text-ivory-text font-body hover:text-primary transition-colors duration-300 scale-95 transition-transform duration-200" href="#">Послуги</a>
+<a class="text-ivory-text font-body hover:text-primary transition-colors duration-300 scale-95 transition-transform duration-200" href="#">VIP Трансфер</a>
+<a class="text-ivory-text font-body hover:text-primary transition-colors duration-300 scale-95 transition-transform duration-200" href="#">Контакти</a>
+<a class="ml-4 px-6 py-2 bg-obsidian-button text-ivory-text rounded-full font-body text-body-sm hover:bg-surface-variant transition-colors border border-white/10" href="#">Увійти</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-32 pb-section-gap px-8 md:px-0">
+<section class="max-w-container-max mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+<h2 class="font-headline-md text-headline-md text-ivory-text max-w-2xl">
+                    Відгуки наших пасажирів
+                </h2>
+<a class="text-primary-container font-body text-body hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                    Більше відгуків у нашому Instagram
+                    <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Reviews Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review Card 1 -->
+<div class="bg-[#1e1e2a] rounded-card p-8 border border-white/5 flex flex-col h-full">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-body text-ash-text mb-8 flex-grow">
+                        "Дуже вдячні за швидку доставку посилки Київ-Варшава-Київ та майже цілодобову оперативну підтримку."
+                    </p>
+<div class="flex items-center gap-4 mt-auto">
+<div class="w-10 h-10 rounded-full bg-obsidian-button flex items-center justify-center border border-white/5">
+<span class="font-subheading text-body-sm text-ivory-text">ОМ</span>
+</div>
+<span class="font-subheading text-body text-ivory-text">Олена М.</span>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-[#1e1e2a] rounded-card p-8 border border-white/5 flex flex-col h-full">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-body text-ash-text mb-8 flex-grow">
+                        "Вчора вранці приїхали із Варшави до Києва. Поїздка була максимально комфортною та швидкою. Дякую Вам."
+                    </p>
+<div class="flex items-center gap-4 mt-auto">
+<div class="w-10 h-10 rounded-full bg-obsidian-button flex items-center justify-center border border-white/5">
+<span class="font-subheading text-body-sm text-ivory-text">МК</span>
+</div>
+<span class="font-subheading text-body text-ivory-text">Марія К.</span>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="bg-[#1e1e2a] rounded-card p-8 border border-white/5 flex flex-col h-full">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-ivory-text" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-body text-ash-text mb-8 flex-grow">
+                        "Всім привіт) хочу написати відгук. Дякую велике за роботу, завжди на зв'язку, швидко відповідають. Я пробувала через різних перевізників, і ви кращі."
+                    </p>
+<div class="flex items-center gap-4 mt-auto">
+<div class="w-10 h-10 rounded-full bg-obsidian-button flex items-center justify-center border border-white/5">
+<span class="font-subheading text-body-sm text-ivory-text">АВ</span>
+</div>
+<span class="font-subheading text-body text-ivory-text">Анна В.</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface border-t border-outline-variant w-full py-section-gap">
+<div class="max-w-container-max mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-element-gap">
+<div class="font-display text-headline-sm text-ivory-text opacity-80 hover:opacity-100 transition-opacity">
+                EU BUS
+            </div>
+<div class="flex gap-6 text-caption font-caption">
+<a class="text-ash-text hover:text-pure-white transition-colors" href="#">Політика конфіденційності</a>
+<a class="text-ash-text hover:text-pure-white transition-colors" href="#">Умови надання послуг</a>
+<a class="text-ash-text hover:text-pure-white transition-colors" href="#">Допомога</a>
+</div>
+<div class="text-caption font-caption text-ash-text">
+                © 2024 EU BUS. Усі права захищено.
+            </div>
+</div>
+</footer>
+</body></html>

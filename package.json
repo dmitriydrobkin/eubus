@@ -40,6 +40,8 @@
     "@cloudflare/next-on-pages": "^1.13.7",
     "@cloudflare/workers-types": "^4.20241224.0",
     "@t3-oss/env-nextjs": "^0.11.1",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.11",
     "@types/better-sqlite3": "^7.6.12",
     "@types/eslint": "^8.56.2",
     "@types/node": "^22.10.2",

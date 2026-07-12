@@ -1,0 +1,166 @@
+<!DOCTYPE html><html class="dark" lang="uk" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>EU BUS - VIP Трансфер</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;480;530&amp;family=Sora:wght@480;530&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#464553",
+                        "primary-container": "#5266eb",
+                        "on-secondary": "#2f2f3c",
+                        "on-primary-fixed-variant": "#1b33bc",
+                        "on-primary-container": "#fdfaff",
+                        "surface": "#12131b",
+                        "surface-container-lowest": "#0d0e15",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#bbc3ff",
+                        "obsidian-button": "#272735",
+                        "secondary-fixed-dim": "#c7c5d5",
+                        "surface-variant": "#34343d",
+                        "surface-bright": "#383841",
+                        "tertiary-fixed": "#ffdbc8",
+                        "tertiary-fixed-dim": "#ffb689",
+                        "on-error": "#690005",
+                        "on-primary": "#001b97",
+                        "secondary": "#c7c5d5",
+                        "on-tertiary-fixed": "#321300",
+                        "on-tertiary-container": "#fffaf9",
+                        "primary-fixed-dim": "#bbc3ff",
+                        "surface-container-highest": "#34343d",
+                        "on-surface-variant": "#c5c5d7",
+                        "outline": "#8f8fa0",
+                        "on-background": "#e3e1ed",
+                        "primary-fixed": "#dfe0ff",
+                        "on-secondary-fixed-variant": "#464553",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#b95801",
+                        "surface-container": "#1e1f27",
+                        "inverse-surface": "#e3e1ed",
+                        "inverse-primary": "#3a4fd4",
+                        "secondary-fixed": "#e3e0f1",
+                        "outline-variant": "#454654",
+                        "on-tertiary-fixed-variant": "#743500",
+                        "pure-white": "#ffffff",
+                        "tertiary": "#ffb689",
+                        "primary": "#bbc3ff",
+                        "slate-border": "#70707d",
+                        "on-surface": "#e3e1ed",
+                        "inverse-on-surface": "#2f3038",
+                        "onyx-canvas": "#171721",
+                        "surface-dim": "#12131b",
+                        "on-primary-fixed": "#000d60",
+                        "surface-container-high": "#292932",
+                        "ivory-text": "#ededf3",
+                        "mist-border": "#e2e3ed",
+                        "on-tertiary": "#512300",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1a1a26",
+                        "on-secondary-container": "#b5b3c3",
+                        "background": "#12131b",
+                        "surface-container-low": "#1a1b23",
+                        "ash-text": "#c3c3cc",
+                        "graphite-card": "#1e1e2a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "4px",
+                        "container-max": "1200px",
+                        "card-padding": "32px",
+                        "element-gap": "12px",
+                        "section-gap": "72px"
+                    },
+                    fontFamily: {
+                        "subheading": ["inter"],
+                        "body-lg": ["inter"],
+                        "caption": ["inter"],
+                        "display": ["sora"],
+                        "body": ["inter"],
+                        "headline-sm": ["sora"],
+                        "headline-md": ["sora"],
+                        "headline-lg": ["sora"],
+                        "body-sm": ["inter"]
+                    },
+                    fontSize: {
+                        "subheading": ["21px", { "lineHeight": "1.35", "letterSpacing": "0em", "fontWeight": "480" }],
+                        "body-lg": ["18px", { "lineHeight": "1.35", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "480" }],
+                        "display": ["65px", { "lineHeight": "1.1", "letterSpacing": "0em", "fontWeight": "530" }],
+                        "body": ["16px", { "lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-sm": ["28px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "480" }],
+                        "headline-md": ["32px", { "lineHeight": "1.15", "letterSpacing": "0.015em", "fontWeight": "480" }],
+                        "headline-lg": ["42px", { "lineHeight": "1.15", "letterSpacing": "0.01em", "fontWeight": "480" }],
+                        "body-sm": ["14px", { "lineHeight": "1", "letterSpacing": "0.005em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #171721; color: #ededf3; margin: 0; padding: 0; }
+        .graphite-surface { background-color: #1e1e2a; }
+    </style>
+</head>
+<body class="bg-onyx-canvas text-ivory-text font-body antialiased selection:bg-primary-container selection:text-pure-white">
+<!-- VIP Transfer Section Component -->
+<section class="w-full py-32 bg-onyx-canvas">
+<div class="max-w-container-max mx-auto px-8">
+<!-- Main Surface: Graphite Card -->
+<div class="graphite-surface rounded-[12px] p-10 lg:p-16 border border-white/5">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<!-- LEFT COLUMN (7 cols) -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<span class="text-xs text-ash-text tracking-[0.2em] uppercase mb-6 block font-medium">ПРЕМІУМ ПОСЛУГА</span>
+<h2 class="text-4xl lg:text-5xl text-ivory-text leading-[1.15] font-medium mb-6 font-display">VIP Трансфер: Безкомпромісний комфорт.</h2>
+<p class="text-lg text-ash-text leading-relaxed mb-10 max-w-xl font-body">Ідеальний вибір для ділових поїздок та найвимогливіших клієнтів. Абсолютна приватність, власний графік та жодних очікуваний.</p>
+<ul class="flex flex-col gap-5 mb-12">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-ivory-text" style="font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;">check_circle</span>
+<span class="text-base text-ivory-text font-body">Подача авто за вашою адресою у зручний для вас час.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-ivory-text" style="font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;">check_circle</span>
+<span class="text-base text-ivory-text font-body">Автомобілі представницького класу (Mercedes V-Class).</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-ivory-text" style="font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;">check_circle</span>
+<span class="text-base text-ivory-text font-body">Індивідуальний маршрут та пріоритетне проходження кордону.</span>
+</li>
+</ul>
+<div>
+<button class="border border-mist-border text-ivory-text rounded-full px-8 py-4 text-base font-body hover:bg-obsidian-button transition-colors duration-300">
+                                ЗАМОВИТИ VIP-ТРАНСФЕР
+                            </button>
+</div>
+</div>
+<!-- RIGHT COLUMN (5 cols) -->
+<div class="lg:col-span-5 relative h-full min-h-[400px]">
+<!-- Image Area -->
+<div class="aspect-[4/5] w-full relative overflow-hidden rounded-[12px] bg-surface-container-high">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A luxurious black Mercedes V-Class parked in front of a modern architectural building at twilight. The scene is illuminated by soft, cool-toned lighting, emphasizing the sleek lines of the vehicle. The overall mood is premium, hushed, and cinematic, perfectly aligning with an alpine banking aesthetic characterized by deep onyx tones and high-contrast ivory highlights." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAREeFaZnVpEiPiYX5N9cMcFHZdprKxfw5k9WEczpjfQa6RAwCFf2ggvKi2iImwPrHjbVsG0iEs_N0-zBnVcXFJ28ovln0P5Q-l0wmPTb_OB5CccrJi7E1L4YAC6OJU_Isqj4yGoc-I8VZPisJ7ZkFQZuvtawOKo68k7TrPjGCAkxbAukSQ0C0cYpFyimzZXr4f8B-WWQRAEiDY8fMMk1vkuydkZpa7W27KszTQj1_dEqn1EF3ugbP-xKZ4Bo8fvXDJK_5xSeoN8E3aNw&quot;);"></div>
+<div class="absolute inset-0 bg-onyx-canvas/30"></div>
+</div>
+<!-- Floating Price Tag -->
+<div class="absolute bottom-6 -left-6 lg:left-[-24px] bg-onyx-canvas/90 backdrop-blur-md border border-white/10 p-6 rounded-[12px]">
+<p class="text-sm text-ash-text font-body mb-1">Фіксована вартість</p>
+<p class="text-3xl text-ivory-text font-medium font-headline-md">40 000 ₴</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+</body></html>

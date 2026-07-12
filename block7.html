@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EU BUS Footer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;480;500&family=Sora:wght@480;530&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=inter:wght@100..900&family=sora:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#0d0e15",
+                        "ivory-text": "#ededf3",
+                        "secondary": "#c7c5d5",
+                        "on-primary-fixed": "#000d60",
+                        "slate-border": "#70707d",
+                        "on-tertiary-fixed-variant": "#743500",
+                        "obsidian-button": "#272735",
+                        "surface-container": "#1e1f27",
+                        "on-surface": "#e3e1ed",
+                        "surface-container-highest": "#34343d",
+                        "background": "#12131b",
+                        "pure-white": "#ffffff",
+                        "surface-variant": "#34343d",
+                        "ash-text": "#c3c3cc",
+                        "onyx-canvas": "#171721",
+                        "on-tertiary-container": "#fffaf9",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e3e1ed",
+                        "on-primary-container": "#fdfaff",
+                        "on-tertiary-fixed": "#321300",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1a1b23",
+                        "surface-dim": "#12131b",
+                        "inverse-on-surface": "#2f3038",
+                        "on-primary": "#001b97",
+                        "on-surface-variant": "#c5c5d7",
+                        "outline": "#8f8fa0",
+                        "on-tertiary": "#512300",
+                        "tertiary-fixed": "#ffdbc8",
+                        "tertiary-fixed-dim": "#ffb689",
+                        "secondary-container": "#464553",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#383841",
+                        "on-secondary-container": "#b5b3c3",
+                        "primary-container": "#5266eb",
+                        "surface-tint": "#bbc3ff",
+                        "outline-variant": "#454654",
+                        "inverse-primary": "#3a4fd4",
+                        "inverse-surface": "#e3e1ed",
+                        "on-error": "#690005",
+                        "primary-fixed": "#dfe0ff",
+                        "tertiary": "#ffb689",
+                        "on-secondary-fixed-variant": "#464553",
+                        "surface-container-high": "#292932",
+                        "secondary-fixed": "#e3e0f1",
+                        "primary": "#bbc3ff",
+                        "on-primary-fixed-variant": "#1b33bc",
+                        "tertiary-container": "#b95801",
+                        "primary-fixed-dim": "#bbc3ff",
+                        "mist-border": "#e2e3ed",
+                        "secondary-fixed-dim": "#c7c5d5",
+                        "surface": "#12131b",
+                        "on-secondary-fixed": "#1a1a26",
+                        "on-secondary": "#2f2f3c"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "4px",
+                        "element-gap": "12px",
+                        "card-padding": "32px",
+                        "section-gap": "72px",
+                        "container-max": "1200px"
+                    },
+                    fontFamily: {
+                        "headline-sm": ["sora"],
+                        "display": ["sora"],
+                        "body-lg": ["inter"],
+                        "headline-lg": ["sora"],
+                        "subheading": ["inter"],
+                        "caption": ["inter"],
+                        "body": ["inter"],
+                        "body-sm": ["inter"],
+                        "headline-md": ["sora"]
+                    },
+                    fontSize: {
+                        "headline-sm": ["28px", { lineHeight: "1.2", letterSpacing: "0.02em", fontWeight: "480" }],
+                        "display": ["65px", { lineHeight: "1.1", letterSpacing: "0em", fontWeight: "530" }],
+                        "body-lg": ["18px", { lineHeight: "1.35", letterSpacing: "0em", fontWeight: "400" }],
+                        "headline-lg": ["42px", { lineHeight: "1.15", letterSpacing: "0.01em", fontWeight: "480" }],
+                        "subheading": ["21px", { lineHeight: "1.35", letterSpacing: "0em", fontWeight: "480" }],
+                        "caption": ["12px", { lineHeight: "1", letterSpacing: "0.01em", fontWeight: "480" }],
+                        "body": ["16px", { lineHeight: "1.5", letterSpacing: "0em", fontWeight: "400" }],
+                        "body-sm": ["14px", { lineHeight: "1", letterSpacing: "0.005em", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "1.15", letterSpacing: "0.015em", fontWeight: "480" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<!-- Filler content to push footer to bottom -->
+<main class="flex-grow"></main>
+<footer class="bg-surface w-full pt-16 pb-8 border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<!-- Brand Column -->
+<div class="flex-1">
+<h2 class="font-display text-headline-sm text-ivory-text mb-2">EU BUS</h2>
+<p class="font-body-sm text-ash-text max-w-xs">Міжнародні пасажирські перевезення.</p>
+</div>
+<!-- Contacts Column -->
+<div class="flex-1">
+<h3 class="font-caption text-ivory-text mb-4 uppercase tracking-[0.15em]">Контакти</h3>
+<a class="font-body-lg text-ivory-text block mb-2 font-medium hover:text-primary transition-colors" href="tel:+380730030200">+38 073 003 02 00</a>
+<a class="font-body-lg text-ivory-text block mb-2 font-medium hover:text-primary transition-colors" href="tel:+380730367677">+38 073 036 76 77</a>
+</div>
+<!-- Social/Messengers Column -->
+<div class="flex-1">
+<h3 class="font-caption text-ivory-text mb-4 uppercase tracking-[0.15em]">Месенджери</h3>
+<nav class="flex flex-col gap-2">
+<a class="font-body-sm text-ash-text hover:text-ivory-text transition-colors cursor-pointer w-fit" href="#">Telegram</a>
+<a class="font-body-sm text-ash-text hover:text-ivory-text transition-colors cursor-pointer w-fit" href="#">Viber</a>
+<a class="font-body-sm text-ash-text hover:text-ivory-text transition-colors cursor-pointer w-fit" href="#">WhatsApp</a>
+</nav>
+</div>
+</div>
+<!-- Legal Disclaimer Row -->
+<div class="mt-16 pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-caption text-ash-text">© 2026 EU BUS. Усі права захищено.</p>
+<div class="flex gap-element-gap items-center">
+<a class="font-caption text-ash-text hover:text-pure-white transition-colors" href="#">Політика конфіденційності</a>
+<a class="font-caption text-ash-text hover:text-pure-white transition-colors" href="#">Умови надання послуг</a>
+<a class="font-caption text-ash-text hover:text-pure-white transition-colors" href="#">Допомога</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
