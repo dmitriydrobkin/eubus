@@ -1,14 +1,16 @@
-export default function ReviewsSection() {
+import { Dictionary } from '@/i18n/dictionaries';
+
+export default function ReviewsSection({ dict }: { dict: Dictionary['reviews'] }) {
   return (
     <section className="w-full pt-32 pb-section-gap px-8 md:px-0 bg-onyx-canvas">
       <div className="max-w-container-max mx-auto px-8">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
           <h2 className="font-headline-md text-headline-md text-ivory-text max-w-2xl">
-            Відгуки наших пасажирів
+            {dict.title}
           </h2>
           <a className="text-primary-container font-body text-body hover:text-primary transition-colors flex items-center gap-2 group" href="#">
-            Більше відгуків у нашому Instagram
+            {dict.moreBtn}
             <span className="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </a>
         </div>
@@ -22,13 +24,13 @@ export default function ReviewsSection() {
               ))}
             </div>
             <p className="font-body text-body text-ash-text mb-8 flex-grow">
-              "Дуже вдячні за швидку доставку посилки Київ-Варшава-Київ та майже цілодобову оперативну підтримку."
+              "{dict.r1Text}"
             </p>
             <div className="flex items-center gap-4 mt-auto">
               <div className="w-10 h-10 rounded-full bg-obsidian-button flex items-center justify-center border border-white/5">
-                <span className="font-subheading text-body-sm text-ivory-text">ОМ</span>
+                <span className="font-subheading text-body-sm text-ivory-text">{dict.r1Initials}</span>
               </div>
-              <span className="font-subheading text-body text-ivory-text">Олена М.</span>
+              <span className="font-subheading text-body text-ivory-text">{dict.r1Author}</span>
             </div>
           </div>
           {/* Review Card 2 */}
@@ -39,13 +41,13 @@ export default function ReviewsSection() {
               ))}
             </div>
             <p className="font-body text-body text-ash-text mb-8 flex-grow">
-              "Вчора вранці приїхали із Варшави до Києва. Поїздка була максимально комфортною та швидкою. Дякую Вам."
+              "{dict.r2Text}"
             </p>
             <div className="flex items-center gap-4 mt-auto">
               <div className="w-10 h-10 rounded-full bg-obsidian-button flex items-center justify-center border border-white/5">
-                <span className="font-subheading text-body-sm text-ivory-text">МК</span>
+                <span className="font-subheading text-body-sm text-ivory-text">{dict.r2Initials}</span>
               </div>
-              <span className="font-subheading text-body text-ivory-text">Марія К.</span>
+              <span className="font-subheading text-body text-ivory-text">{dict.r2Author}</span>
             </div>
           </div>
           {/* Review Card 3 */}
@@ -56,13 +58,13 @@ export default function ReviewsSection() {
               ))}
             </div>
             <p className="font-body text-body text-ash-text mb-8 flex-grow">
-              "Всім привіт) хочу написати відгук. Дякую велике за роботу, завжди на зв'язку, швидко відповідають. Я пробувала через різних перевізників, і ви кращі."
+              "{dict.r3Text}"
             </p>
             <div className="flex items-center gap-4 mt-auto">
               <div className="w-10 h-10 rounded-full bg-obsidian-button flex items-center justify-center border border-white/5">
-                <span className="font-subheading text-body-sm text-ivory-text">АВ</span>
+                <span className="font-subheading text-body-sm text-ivory-text">{dict.r3Initials}</span>
               </div>
-              <span className="font-subheading text-body text-ivory-text">Анна В.</span>
+              <span className="font-subheading text-body text-ivory-text">{dict.r3Author}</span>
             </div>
           </div>
         </div>

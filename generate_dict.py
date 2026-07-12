@@ -1,7 +1,6 @@
-export type Dictionary = typeof dictionaries.uk;
+import json
 
-export const dictionaries = {
-  uk: {
+dict_uk = {
     "nav": {
         "schedule": "Розклад",
         "services": "Послуги",
@@ -125,8 +124,9 @@ export const dictionaries = {
         "help": "Допомога",
         "mobileVip": "VIP"
     }
-},
-  ru: {
+}
+
+dict_ru = {
     "nav": {
         "schedule": "Расписание",
         "services": "Услуги",
@@ -251,8 +251,19 @@ export const dictionaries = {
         "mobileVip": "VIP"
     }
 }
-};
 
-export function getDictionary(lang: string): Dictionary {
+content = f"""export type Dictionary = typeof dictionaries.uk;
+
+export const dictionaries = {{
+  uk: {json.dumps(dict_uk, ensure_ascii=False, indent=4)},
+  ru: {json.dumps(dict_ru, ensure_ascii=False, indent=4)}
+}};
+
+export function getDictionary(lang: string): Dictionary {{
   return (dictionaries as any)[lang] || dictionaries.uk;
-}
+}}
+"""
+
+with open("src/i18n/dictionaries.ts", "w", encoding="utf-8") as f:
+    f.write(content)
+

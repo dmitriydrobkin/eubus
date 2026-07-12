@@ -1,9 +1,10 @@
 import { headers } from 'next/headers';
 import type { Metadata } from 'next';
-import { Header } from '@/components/Header';
-import { ConditionalFooter } from '@/components/ConditionalFooter';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { getSiteSettings } from '@/server/functions/settings';
 import { StructuredData } from '@/components/StructuredData';
+import { getDictionary } from '@/i18n/dictionaries';
 
 export const runtime = 'edge';
 
@@ -62,12 +63,13 @@ export default async function LangLayout({
   params: { lang: string };
 }>) {
   const settings = await getSiteSettings();
+  const dict = getDictionary(params.lang);
 
   return (
     <>
-      <Header lang={params.lang} />
-      <main className="flex-grow">{children}</main>
-      <ConditionalFooter settings={settings} lang={params.lang} />
+      <Header dict={dict.nav} />
+      <main className="flex-grow flex flex-col">{children}</main>
+      <Footer dict={dict.footer} navDict={dict.nav} />
       <StructuredData lang={params.lang || 'uk'} />
     </>
   );

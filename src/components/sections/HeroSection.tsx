@@ -1,85 +1,73 @@
 'use client';
 
-export default function HeroSection() {
+import { Dictionary } from '@/i18n/dictionaries';
+
+export default function HeroSection({ dict }: { dict: Dictionary['hero'] }) {
   return (
     <section className="relative h-screen w-full flex items-center justify-center pt-20">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 w-full h-full z-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAT3SKPkFyqsz8H0Ofpdddy3XnGORncl3I9RNtdUxLeIIv474FUH0700jnVi2FZXW_-YcU0h1-p7aAw0w47X91K3nD2I76uI-wgODd3FanN_3JXbnXgJr-FMeaYqEqEVfjHxKrQdK42vpvL6xjBLhtv2jOD2Zqd39oAn-483iAFzEiSoUBUESzvR8nFroVM6mVtYI5o25epN_Hcwcw3zxFUGXa4TjQRHiqFNNK8sTsd1LqzFmKox42s')" }}
-        />
-        <div className="absolute inset-0 bg-onyx-canvas/90 hero-bg-overlay" />
+      {/* Background with Grid and Glow */}
+      <div className="absolute inset-0 z-0 bg-background overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgwem0zOSAzOUgwVjFoMzl2Mzh6IiBmaWxsPSIjMWUxZjI3IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=')] opacity-20"></div>
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary-fixed-dim/20 blur-[120px] rounded-full pointer-events-none"></div>
       </div>
-
-      {/* Content Container */}
-      <div className="relative z-10 w-full max-w-container-max mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        {/* Left Column (Text & CTA) */}
-        <div className="md:col-span-7 flex flex-col items-start gap-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container text-ash-text font-caption uppercase tracking-wider border border-surface-variant/50">
-            <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse" />
-            Щоденні рейси
+      <div className="relative z-10 w-full max-w-container-max mx-auto px-8 flex flex-col md:flex-row items-center gap-12">
+        {/* Left Content */}
+        <div className="flex-1 text-center md:text-left flex flex-col items-center md:items-start gap-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-fixed/30 bg-surface-container/50 backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+            <span className="font-caption text-primary-fixed">{dict.badge}</span>
           </div>
-          {/* Headline */}
-          <h1 className="font-display text-display text-ivory-text leading-[1.1]">
-            Прямі та комфортні рейси Київ — Варшава.
+          <h1 className="font-display text-display-lg font-bold text-ivory-text leading-tight drop-shadow-lg">
+            {dict.title}
           </h1>
-          {/* Body Text */}
-          <p className="font-body-lg text-ash-text max-w-2xl">
-            Без піших переходів кордону. Wi-Fi, клімат-контроль та ортопедичні крісла. Ваша подорож бізнес-класу за ціною звичайного квитка.
+          <p className="font-body-lg text-ash-text max-w-xl">
+            {dict.subtitle}
           </p>
-          {/* Primary CTA */}
-          <button className="bg-primary-container text-pure-white px-8 py-4 rounded-full font-body font-medium hover:bg-inverse-primary transition-colors duration-300 shadow-lg shadow-primary-container/20 flex items-center gap-3 mt-4 group">
-            ЗНАЙТИ РЕЙС ТА ЗАБРОНЮВАТИ
-            <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-          </button>
-        </div>
-
-        {/* Right Column (Widget) */}
-        <div className="md:col-span-5 w-full flex justify-end">
-          {/* Graphite Card Widget */}
-          <div className="bg-surface-container rounded-[12px] p-card-padding w-full max-w-md border border-surface-variant/30 flex flex-col gap-6 backdrop-blur-sm">
-            {/* Header */}
-            <div className="flex justify-between items-center pb-4 border-b border-surface-variant/50">
-              <span className="font-caption text-ash-text uppercase tracking-widest">Найближчий рейс</span>
-              <span className="font-body-sm text-ivory-text font-medium bg-surface-variant/40 px-3 py-1 rounded-full">Сьогодні</span>
-            </div>
-            {/* Route details */}
-            <div className="flex flex-col gap-4 py-2">
-              <div className="flex items-center justify-between">
-                <div className="flex flex-col">
-                  <span className="font-headline-md text-ivory-text">КИЇВ</span>
-                  <span className="font-caption text-ash-text">Автостанція "Київ"</span>
-                </div>
-                <div className="flex flex-col items-center justify-center px-4 text-primary-container">
-                  <span className="material-symbols-outlined text-3xl">trending_flat</span>
-                  <span className="font-caption text-ash-text mt-1 text-[10px]">14 год 30 хв</span>
-                </div>
-                <div className="flex flex-col text-right">
-                  <span className="font-headline-md text-ivory-text">ВАРШАВА</span>
-                  <span className="font-caption text-ash-text">Автовокзал "Заходня"</span>
-                </div>
-              </div>
-              {/* Time & Status */}
-              <div className="flex justify-between items-end mt-4 pt-4 border-t border-surface-variant/30">
-                <div>
-                  <span className="font-caption text-ash-text block mb-1">Відправлення</span>
-                  <span className="font-headline-md text-primary-container">16:30</span>
-                </div>
-                <div className="flex items-center gap-2 text-right">
-                  <div className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75" />
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-primary-container" />
-                  </div>
-                  <span className="font-body-sm text-ivory-text">Залишилось 4 місця</span>
-                </div>
-              </div>
-            </div>
-            {/* Action Button */}
-            <button className="w-full py-4 mt-2 border border-mist-border rounded-full text-ivory-text font-body hover:bg-mist-border/10 transition-colors duration-300">
-              Бронювати місце
+          <div className="pt-4 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <button className="bg-primary-container text-pure-white px-8 py-4 rounded-full font-body font-medium hover:bg-inverse-primary transition-colors duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto">
+              {dict.cta}
+              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </button>
+          </div>
+        </div>
+        {/* Right Content / Quick Widget */}
+        <div className="w-full md:w-[420px] shrink-0">
+          <div className="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 rounded-2xl p-6 shadow-2xl">
+            <div className="flex justify-between items-center mb-6 pb-4 border-b border-outline-variant/50">
+              <span className="font-subheading text-ivory-text">{dict.widget.header}</span>
+              <span className="px-3 py-1 bg-surface-variant rounded-full text-[12px] text-primary-fixed">{dict.widget.today}</span>
+            </div>
+            {/* Route Timeline */}
+            <div className="relative pl-6 border-l border-surface-variant space-y-6">
+              {/* Point A */}
+              <div className="relative">
+                <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-primary-fixed shadow-[0_0_10px_rgba(223,224,255,0.5)]"></span>
+                <p className="font-subheading text-lg text-ivory-text leading-none">{dict.widget.kyiv}</p>
+                <p className="font-body-sm text-ash-text mt-1">{dict.widget.kyivStation}</p>
+              </div>
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[20px] bg-background px-2 font-caption text-[10px] text-ash-text border border-surface-variant rounded-full">
+                {dict.widget.duration}
+              </div>
+              {/* Point B */}
+              <div className="relative">
+                <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-on-tertiary border-2 border-background"></span>
+                <p className="font-subheading text-lg text-ivory-text leading-none">{dict.widget.warsaw}</p>
+                <p className="font-body-sm text-ash-text mt-1">{dict.widget.warsawStation}</p>
+              </div>
+            </div>
+            {/* Action Area */}
+            <div className="mt-8 bg-background/50 rounded-xl p-4 border border-outline-variant/30 flex justify-between items-center">
+              <div>
+                <p className="font-caption text-ash-text mb-1">{dict.widget.departure}</p>
+                <p className="font-display text-2xl font-bold text-ivory-text">{dict.widget.time}</p>
+              </div>
+              <div className="text-right">
+                <p className="font-caption text-error mb-2">{dict.widget.seatsLeft}</p>
+                <button className="bg-ivory-text text-background px-5 py-2 rounded-lg font-body-sm font-medium hover:bg-white transition-colors">
+                  {dict.widget.bookBtn}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
