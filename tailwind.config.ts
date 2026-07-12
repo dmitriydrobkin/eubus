@@ -40,16 +40,8 @@ const config: Config = {
         "container-max": "1200px"
       },
       fontFamily: {
-        "headline-md": ["var(--font-sora)", ...fontFamily.sans],
-        "caption": ["var(--font-inter)", ...fontFamily.sans],
-        "display": ["var(--font-sora)", ...fontFamily.sans],
-        "body-lg": ["var(--font-inter)", ...fontFamily.sans],
-        "headline-sm": ["var(--font-sora)", ...fontFamily.sans],
-        "body-sm": ["var(--font-inter)", ...fontFamily.sans],
-        "subheading": ["var(--font-inter)", ...fontFamily.sans],
-        "body": ["var(--font-inter)", ...fontFamily.sans],
-        "headline-lg": ["var(--font-sora)", ...fontFamily.sans],
-        sans: ["var(--font-inter)", ...fontFamily.sans],
+        sans: ["var(--font-sans, ui-sans-serif)", ...fontFamily.sans],
+        display: ["var(--font-display, ui-sans-serif)", ...fontFamily.sans],
       },
       fontSize: {
         "headline-md": ["32px", { lineHeight: "1.1", letterSpacing: "0.015em", fontWeight: "600" }],

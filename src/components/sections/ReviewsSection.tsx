@@ -9,9 +9,9 @@ export default function ReviewsSection({ dict }: { dict: Dictionary['reviews'] }
           <h2 className="font-display text-3xl md:text-headline-md font-bold text-ivory-text max-w-2xl leading-tight">
             {dict.title}
           </h2>
-          <a className="text-primary-container font-body text-body hover:text-primary transition-colors flex items-center gap-2 group" href="#">
-            {dict.moreBtn}
-            <span className="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          <a className="text-primary-container font-body text-body hover:text-primary transition-colors flex items-center gap-2 group text-right" href="https://www.instagram.com/kyiv_warszawa/" target="_blank" rel="noopener noreferrer">
+            <span className="max-w-[200px] sm:max-w-none text-left sm:text-right">{dict.moreBtn}</span>
+            <span className="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform flex-shrink-0">arrow_forward</span>
           </a>
         </div>
         {/* Reviews Grid */}

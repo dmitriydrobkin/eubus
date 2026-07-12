@@ -17,7 +17,7 @@ export default function TelegramSection({ dict }: { dict: Dictionary['telegram']
               </div>
               <span className="font-subheading text-primary-fixed tracking-wide">EU BUS BOT</span>
             </div>
-            <h2 className="font-display text-3xl md:text-headline-lg font-bold text-ivory-text mb-6 leading-tight">
+            <h2 className="font-display text-3xl md:text-headline-lg font-bold text-ivory-text mb-6 leading-tight whitespace-pre-line">
               {dict.title}
             </h2>
             <p className="font-body text-body-lg text-ash-text mb-8 max-w-xl">

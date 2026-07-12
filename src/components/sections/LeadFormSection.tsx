@@ -28,8 +28,8 @@ export default function LeadFormSection({ dict }: { dict: Dictionary['leadForm']
     <section id="contact-form" className="w-full py-12 md:py-24 bg-onyx-canvas">
       <div className="max-w-3xl mx-auto px-6 md:px-8">
         <div className="bg-graphite-card rounded-xl p-6 md:p-12 border border-outline-variant/30">
-          <div className="text-center mb-10">
-            <h2 className="font-display text-3xl md:text-headline-md font-bold text-ivory-text mb-4 leading-tight">{dict.title}</h2>
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="font-display text-3xl md:text-headline-md font-bold text-ivory-text mb-6 leading-snug">{dict.title}</h2>
             <p className="font-body text-body text-ash-text">
               {dict.subtitle}
             </p>

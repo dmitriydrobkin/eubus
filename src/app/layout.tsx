@@ -1,22 +1,20 @@
 import type { Metadata } from 'next';
-import { Inter, Sora } from 'next/font/google';
+import { Manrope, Unbounded } from 'next/font/google';
 import { getSiteSettings } from '@/server/functions/settings';
 import './globals.css';
 
 // ⚡ КРИТИЧНО: Переводим весь Layout в Edge, чтобы не было конфликтов с page.tsx
 export const runtime = 'edge';
 
-const sora = Sora({
-  subsets: ['latin'],
-  weight: ['500', '600'],
-  variable: '--font-sora',
+const unbounded = Unbounded({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-display',
   display: 'swap',
 });
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500'],
-  variable: '--font-inter',
+  variable: '--font-sans',
   display: 'swap',
 });
 
@@ -42,11 +40,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="uk" className={`dark ${sora.variable} ${inter.variable}`}>
+    <html lang="uk" className={`dark ${unbounded.variable} ${manrope.variable}`}>
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
-      <body className="bg-onyx-canvas text-ivory-text font-body antialiased min-h-screen overflow-x-hidden flex flex-col">
+      <body className="bg-onyx-canvas text-ivory-text font-sans antialiased min-h-screen overflow-x-hidden flex flex-col">
         {children}
       </body>
     </html>

@@ -18,11 +18,11 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 400);
+    }, 1500);
 
     const removeTimer = setTimeout(() => {
       setShowLoader(false);
-    }, 700);
+    }, 2000);
 
     return () => {
       clearTimeout(fadeTimer);
@@ -34,15 +34,14 @@ export default function Template({ children }: { children: React.ReactNode }) {
     <>
       {showLoader && (
         <div 
-          className={`fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center pointer-events-none transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+          className={`fixed inset-0 z-[200] bg-[#12131b] flex flex-col items-center justify-center pointer-events-none transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
         >
-          <div className="font-display text-3xl md:text-5xl font-bold text-ink flex items-center gap-4">
-            <span className="w-4 h-4 md:w-6 md:h-6 rounded-full bg-coral animate-bounce" style={{ animationDelay: '0ms' }} />
-            <span className="w-4 h-4 md:w-6 md:h-6 rounded-full bg-cyan animate-bounce" style={{ animationDelay: '150ms' }} />
-            <span className="w-4 h-4 md:w-6 md:h-6 rounded-full bg-emerald-400 animate-bounce" style={{ animationDelay: '300ms' }} />
-          </div>
-          <div className="mt-8 font-display text-xl font-bold text-ink/40 tracking-widest uppercase">
-            Malyshev.dev
+          <div className="font-display text-5xl md:text-7xl font-bold flex items-center overflow-hidden tracking-tight drop-shadow-2xl">
+            <span className="text-[#FFD700] animate-logo-reveal" style={{ animationDelay: '0ms' }}>E</span>
+            <span className="text-[#FFD700] animate-logo-reveal" style={{ animationDelay: '100ms' }}>U</span>
+            <span className="text-[#24A1DE] animate-logo-reveal" style={{ animationDelay: '200ms' }}>B</span>
+            <span className="text-[#24A1DE] animate-logo-reveal" style={{ animationDelay: '300ms' }}>U</span>
+            <span className="text-[#24A1DE] animate-logo-reveal" style={{ animationDelay: '400ms' }}>S</span>
           </div>
         </div>
       )}

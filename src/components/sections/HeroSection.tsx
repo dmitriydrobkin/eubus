@@ -5,74 +5,80 @@ import { Dictionary } from '@/i18n/dictionaries';
 
 export default function HeroSection({ dict }: { dict: Dictionary['hero'] }) {
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden">
-      {/* 1. ФОН И ГРАДИЕНТ (Используем next/image для надежности) */}
-      <div className="absolute inset-0 z-0">
-        <Image 
-          src="/hero-bg.png" 
-          alt="Background" 
-          fill 
-          className="object-cover object-center" 
-          priority 
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#171721] via-[#171721]/90 to-[#171721]/30"></div>
-      </div>
+    <section className="relative w-full pt-20 pb-12 lg:pt-24 lg:pb-16 flex flex-col justify-center overflow-hidden bg-[#12131b]">
+      {/* Акцентное свечение на фоне */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] bg-[#5266eb]/20 blur-[100px] rounded-full pointer-events-none"></div>
 
-      {/* 2. КОНТЕНТ */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
-          {/* Левая колонка: Текст */}
-          <div className="flex flex-col gap-6 max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#ededf3] leading-tight">
-              {dict.title}
+          {/* Левая колонка: Оффер и конверсионные элементы */}
+          <div className="flex flex-col gap-6 lg:gap-8 max-w-2xl relative z-20">
+            
+            {/* Бейдж доверия */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 w-fit backdrop-blur-sm">
+              <span className="text-[#5266eb]">⭐</span>
+              <span className="text-sm font-medium text-[#e3e1ed]">
+                {dict.trustBadge}
+              </span>
+            </div>
+
+            {/* Главный заголовок */}
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1]">
+              {dict.titleLine1} <br className="hidden sm:block" />
+              <span className="text-[#5266eb]">{dict.titleLine2}</span>
             </h1>
-            <p className="text-lg text-[#c3c3cc]">
+
+            {/* Подзаголовок */}
+            <p className="font-sans text-lg sm:text-xl text-[#c5c5d7] leading-relaxed max-w-xl">
               {dict.subtitle}
             </p>
+
+            {/* Кнопки действия (Primary & Secondary) */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-2">
+              <button 
+                onClick={() => window.dispatchEvent(new CustomEvent('openContacts'))}
+                className="font-sans px-8 py-4 bg-[#5266eb] hover:bg-[#3a4fd4] text-white rounded-full font-semibold transition-all shadow-lg shadow-[#5266eb]/25 text-center"
+              >
+                {dict.btnBook}
+              </button>
+              <a 
+                href="#schedule"
+                className="inline-flex items-center justify-center font-sans px-8 py-4 bg-transparent border border-[#454654] text-white hover:bg-white/5 rounded-full font-semibold transition-all text-center"
+              >
+                {dict.btnSchedule}
+              </a>
+            </div>
+
+            {/* Блок Social Proof (Триггеры доверия) */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-6 sm:gap-12 mt-6 pt-8 border-t border-white/10">
+              <div>
+                <p className="font-display text-3xl font-bold text-white">{dict.stat1Value}</p>
+                <p className="font-sans text-sm text-[#8f8fa0] mt-1">{dict.stat1Label}</p>
+              </div>
+              <div>
+                <p className="font-display text-3xl font-bold text-white">{dict.stat2Value}</p>
+                <p className="font-sans text-sm text-[#8f8fa0] mt-1">{dict.stat2Label}</p>
+              </div>
+              <div>
+                <p className="font-display text-3xl font-bold text-white">{dict.stat3Value}</p>
+                <p className="font-sans text-sm text-[#8f8fa0] mt-1">{dict.stat3Label}</p>
+              </div>
+            </div>
+
           </div>
 
-          {/* Правая колонка: Карточка расписания */}
-          <div className="w-full max-w-md mx-auto lg:ml-auto lg:mr-0 bg-[#1e1e2a] rounded-2xl p-6 md:p-8 border border-white/5">
-            <h3 className="text-xl font-semibold text-[#ededf3] mb-6">
-              {dict.widget.header}
-            </h3>
-            
-            {/* Блок маршрута (ИСПРАВЛЕНО НАЛОЖЕНИЕ) */}
-            <div className="flex flex-col gap-4">
-              
-              {/* Элемент расписания 1 */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-[#171721] rounded-xl">
-                <div className="flex items-center gap-4">
-                  <div className="text-2xl font-bold text-[#ededf3] shrink-0">
-                    {dict.widget.time}
-                  </div>
-                  <div className="text-[#c3c3cc] text-sm md:text-base leading-tight">
-                    {dict.widget.kyiv} <br className="hidden sm:block" /> — {dict.widget.warsaw}
-                  </div>
-                </div>
-                
-                <button className="w-full sm:w-auto shrink-0 bg-[#5266eb] hover:bg-[#3a4fd4] text-white px-6 py-3 rounded-full font-medium transition-colors">
-                  {dict.widget.bookBtn}
-                </button>
-              </div>
-
-              {/* Элемент расписания 2 */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-[#171721] rounded-xl">
-                <div className="flex items-center gap-4">
-                  <div className="text-2xl font-bold text-[#ededf3] shrink-0">
-                    20:00
-                  </div>
-                  <div className="text-[#c3c3cc] text-sm md:text-base leading-tight">
-                    {dict.widget.kyiv} <br className="hidden sm:block" /> — {dict.widget.warsaw}
-                  </div>
-                </div>
-                
-                <button className="w-full sm:w-auto shrink-0 bg-[#5266eb] hover:bg-[#3a4fd4] text-white px-6 py-3 rounded-full font-medium transition-colors">
-                  {dict.widget.bookBtn}
-                </button>
-              </div>
-
+          {/* Правая колонка: Изображение */}
+          <div className="hidden lg:block relative w-full lg:w-full h-[600px] z-10 lg:mt-0">
+            {/* Desktop Transparent Bus (lg and up) */}
+            <div className="relative w-[110%] -ml-[5%] lg:w-full lg:ml-0 h-full">
+              <Image 
+                src="/premium-bus-transparent.png" 
+                alt="VIP Transfer Bus" 
+                fill 
+                className="object-contain object-right scale-125 transition-transform duration-700 hover:scale-105" 
+                priority 
+              />
             </div>
           </div>
 

@@ -17,13 +17,17 @@ export default function ScheduleSection({ dict }: { dict: Dictionary['schedule']
         {/* Route Card 1: Kyiv -> Warsaw */}
         <article className="bg-graphite-card rounded-xl p-6 md:p-10 flex flex-col justify-between h-full border border-outline-variant/30 transition-transform duration-300 hover:-translate-y-1">
           <div>
-            <div className="flex flex-col sm:flex-row justify-between items-start mb-8 gap-4 sm:gap-0">
+            <div className="flex flex-wrap justify-between items-start mb-8 gap-6 w-full">
               <div className="flex items-center gap-4">
-                <span className="font-display text-2xl md:text-[28px] font-semibold text-ivory-text">{dict.kyivWarsaw.depStation.includes('Київ') || dict.kyivWarsaw.depStation.includes('Киев') ? 'Київ' : 'Киев'}</span>
-                <span className="material-symbols-outlined text-ash-text">arrow_right_alt</span>
-                <span className="font-display text-2xl md:text-[28px] font-semibold text-ivory-text">{dict.kyivWarsaw.arrStation.includes('Варшава') || dict.kyivWarsaw.arrStation.includes('Варшава') ? 'Варшава' : 'Варшава'}</span>
+                <div className="flex flex-col gap-1">
+                  <span className="font-display text-[28px] md:text-[32px] font-bold text-ivory-text leading-none">{dict.kyivWarsaw.depStation.includes('Київ') || dict.kyivWarsaw.depStation.includes('Киев') ? 'Київ' : 'Киев'}</span>
+                  <span className="font-display text-[28px] md:text-[32px] font-bold text-ash-text/50 leading-none">{dict.kyivWarsaw.arrStation.includes('Варшава') || dict.kyivWarsaw.arrStation.includes('Варшава') ? 'Варшава' : 'Варшава'}</span>
+                </div>
+                <div className="flex flex-col items-center justify-center text-primary-fixed h-full mt-2">
+                  <span className="material-symbols-outlined rotate-90 text-[32px]" style={{ fontVariationSettings: "'wght' 300" }}>arrow_right_alt</span>
+                </div>
               </div>
-              <div className="sm:text-right">
+              <div className="text-left sm:text-right">
                 <span className="inline-block px-3 py-1 bg-surface-variant text-ivory-text font-caption text-[12px] rounded-full mb-2">{dict.daily}</span>
                 <p className="font-headline-sm text-2xl md:text-headline-sm text-primary-fixed leading-tight">{dict.priceKyivWarsaw}</p>
                 <p className="font-caption text-[12px] text-ash-text">{dict.oneWay}</p>
@@ -60,13 +64,17 @@ export default function ScheduleSection({ dict }: { dict: Dictionary['schedule']
         {/* Route Card 2: Warsaw -> Kyiv */}
         <article className="bg-graphite-card rounded-xl p-6 md:p-10 flex flex-col justify-between h-full border border-outline-variant/30 transition-transform duration-300 hover:-translate-y-1">
           <div>
-            <div className="flex flex-col sm:flex-row justify-between items-start mb-8 gap-4 sm:gap-0">
+            <div className="flex flex-wrap justify-between items-start mb-8 gap-6 w-full">
               <div className="flex items-center gap-4">
-                <span className="font-display text-2xl md:text-[28px] font-semibold text-ivory-text">Варшава</span>
-                <span className="material-symbols-outlined text-ash-text">arrow_right_alt</span>
-                <span className="font-display text-2xl md:text-[28px] font-semibold text-ivory-text">Київ</span>
+                <div className="flex flex-col gap-1">
+                  <span className="font-display text-[28px] md:text-[32px] font-bold text-ivory-text leading-none">Варшава</span>
+                  <span className="font-display text-[28px] md:text-[32px] font-bold text-ash-text/50 leading-none">Київ</span>
+                </div>
+                <div className="flex flex-col items-center justify-center text-primary-fixed h-full mt-2">
+                  <span className="material-symbols-outlined rotate-90 text-[32px]" style={{ fontVariationSettings: "'wght' 300" }}>arrow_right_alt</span>
+                </div>
               </div>
-              <div className="sm:text-right">
+              <div className="text-left sm:text-right">
                 <span className="inline-block px-3 py-1 bg-surface-variant text-ivory-text font-caption text-[12px] rounded-full mb-2">{dict.daily}</span>
                 <p className="font-headline-sm text-2xl md:text-headline-sm text-primary-fixed leading-tight">{dict.priceWarsawKyiv}</p>
                 <p className="font-caption text-[12px] text-ash-text">{dict.oneWay}</p>
@@ -101,11 +109,10 @@ export default function ScheduleSection({ dict }: { dict: Dictionary['schedule']
           </div>
         </article>
       </div>
-      {/* Bottom Note */}
-      <div className="mt-8 text-center">
-        <p className="font-body text-body-sm text-ash-text flex items-center justify-center gap-2">
-          <span className="material-symbols-outlined text-[16px]">info</span>
-          {dict.note}
+      <div className="mt-8 text-center max-w-3xl mx-auto">
+        <p className="font-body text-body-sm text-ash-text flex items-start sm:items-center justify-center gap-2 text-left sm:text-center">
+          <span className="material-symbols-outlined text-[16px] mt-0.5 sm:mt-0">info</span>
+          <span>{dict.note}</span>
         </p>
       </div>
     </section>

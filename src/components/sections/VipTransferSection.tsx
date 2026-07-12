@@ -53,10 +53,10 @@ export default function VipTransferSection({ dict }: { dict: Dictionary['vip'] }
           {/* Image Right */}
           <div className="w-full">
             <div className="relative h-64 lg:h-full min-h-[300px] w-full rounded-xl overflow-hidden group border border-outline-variant/30">
-              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10 opacity-40"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-onyx-canvas via-onyx-canvas/20 to-transparent z-10 opacity-90"></div>
               {/* Actual Image using next/image with project portfolio photo */}
               <Image 
-                src="/portfolio/project1.jpg" 
+                src="/vip-mercedes.jpeg" 
                 alt="VIP Transfer" 
                 fill 
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
