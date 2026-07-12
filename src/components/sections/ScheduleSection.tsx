@@ -1,3 +1,5 @@
+'use client';
+
 export default function ScheduleSection() {
   return (
     <section id="schedule" className="max-w-container-max mx-auto py-section-gap px-8">

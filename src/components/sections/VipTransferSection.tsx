@@ -1,3 +1,5 @@
+'use client';
+
 export default function VipTransferSection() {
   return (
     <section id="vip" className="w-full py-section-gap bg-onyx-canvas">

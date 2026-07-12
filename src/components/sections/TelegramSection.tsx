@@ -1,3 +1,5 @@
+'use client';
+
 export default function TelegramSection() {
   return (
     <section className="max-w-container-max mx-auto px-8 py-section-gap">
