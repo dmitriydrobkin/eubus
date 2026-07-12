@@ -25,11 +25,11 @@ export default function LeadFormSection({ dict }: { dict: Dictionary['leadForm']
   }
 
   return (
-    <section id="contact-form" className="w-full py-section-gap bg-surface">
-      <div className="max-w-3xl mx-auto px-8">
-        <div className="bg-[#1e1e2a] rounded-[12px] p-8 md:p-12 border border-white/5">
+    <section id="contact-form" className="w-full py-12 md:py-24 bg-onyx-canvas">
+      <div className="max-w-3xl mx-auto px-6 md:px-8">
+        <div className="bg-graphite-card rounded-xl p-6 md:p-12 border border-outline-variant/30">
           <div className="text-center mb-10">
-            <h2 className="font-headline-md text-headline-md text-ivory-text mb-4">{dict.title}</h2>
+            <h2 className="font-display text-3xl md:text-headline-md font-bold text-ivory-text mb-4 leading-tight">{dict.title}</h2>
             <p className="font-body text-body text-ash-text">
               {dict.subtitle}
             </p>
@@ -42,7 +42,7 @@ export default function LeadFormSection({ dict }: { dict: Dictionary['leadForm']
               <p className="font-body-sm text-ash-text">{dict.successSubtitle}</p>
             </div>
           ) : (
-            <form action={clientAction} className="flex flex-col gap-6">
+             <form action={clientAction} className="flex flex-col gap-6">
               {/* Name */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="name" className="font-caption text-ash-text uppercase tracking-wider">{dict.nameLabel}</label>
@@ -51,7 +51,7 @@ export default function LeadFormSection({ dict }: { dict: Dictionary['leadForm']
                   id="name" 
                   name="name" 
                   required 
-                  className="bg-onyx-canvas border border-white/10 rounded-lg px-4 py-3 text-ivory-text font-body focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors"
+                  className="bg-onyx-canvas border border-outline-variant/50 rounded-lg px-4 py-3 text-ivory-text font-body focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors"
                   placeholder={dict.namePlaceholder}
                 />
               </div>
@@ -62,7 +62,7 @@ export default function LeadFormSection({ dict }: { dict: Dictionary['leadForm']
                 <select 
                   id="contactMethod" 
                   name="contactMethod" 
-                  className="bg-onyx-canvas border border-white/10 rounded-lg px-4 py-3 text-ivory-text font-body focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors"
+                  className="bg-onyx-canvas border border-outline-variant/50 rounded-lg px-4 py-3 text-ivory-text font-body focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors"
                 >
                   <option value="telegram">{dict.methodTg}</option>
                   <option value="phone">{dict.methodPhone}</option>
@@ -78,7 +78,7 @@ export default function LeadFormSection({ dict }: { dict: Dictionary['leadForm']
                   id="contactInfo" 
                   name="contactInfo" 
                   required 
-                  className="bg-onyx-canvas border border-white/10 rounded-lg px-4 py-3 text-ivory-text font-body focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors"
+                  className="bg-onyx-canvas border border-outline-variant/50 rounded-lg px-4 py-3 text-ivory-text font-body focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors"
                   placeholder={dict.infoPlaceholder}
                 />
               </div>

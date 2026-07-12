@@ -8,12 +8,14 @@ export const runtime = 'edge';
 
 const sora = Sora({
   subsets: ['latin'],
+  weight: ['500', '600'],
   variable: '--font-sora',
   display: 'swap',
 });
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500'],
   variable: '--font-inter',
   display: 'swap',
 });

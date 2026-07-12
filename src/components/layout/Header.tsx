@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import clsx from 'clsx';
 import { Dictionary } from '@/i18n/dictionaries';
 
@@ -29,11 +30,14 @@ export default function Header({ dict }: { dict: Dictionary['nav'] }) {
     >
       <div className="w-full max-w-container-max mx-auto flex justify-between items-center">
         {/* Brand Logo */}
-        <Link
-          href="#"
-          className="font-display text-headline-sm font-bold text-ivory-text tracking-wider hover:text-primary transition-colors duration-300"
-        >
-          EU BUS
+        <Link href="/" className="relative flex items-center h-12 w-40 shrink-0">
+          <Image 
+            src="/logo.png" 
+            alt="StarBus" 
+            fill 
+            className="object-contain object-left" 
+            priority 
+          />
         </Link>
         {/* Navigation Links (Desktop) */}
         <div className="hidden md:flex items-center gap-8">
