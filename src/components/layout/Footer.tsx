@@ -1,3 +1,5 @@
+'use client';
+
 import { Dictionary } from '@/i18n/dictionaries';
 
 export default function Footer({ dict, navDict }: { dict: Dictionary['footer'], navDict: Dictionary['nav'] }) {
@@ -54,10 +56,10 @@ export default function Footer({ dict, navDict }: { dict: Dictionary['footer'], 
           <span className="material-symbols-outlined">star</span>
           <span className="font-caption text-[10px]">{dict.mobileVip}</span>
         </a>
-        <a href="#contacts" className="flex flex-col items-center gap-1 text-ash-text">
+        <button onClick={() => window.dispatchEvent(new CustomEvent('openContacts'))} className="flex flex-col items-center gap-1 text-ash-text">
           <span className="material-symbols-outlined">support_agent</span>
           <span className="font-caption text-[10px]">{navDict.contacts}</span>
-        </a>
+        </button>
       </div>
     </>
   );
