@@ -23,8 +23,8 @@ export default function FeaturesSection({ dict }: { dict: Dictionary['features']
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
+const observer = new IntersectionObserver(([entry]) => {
+  if (entry?.isIntersecting) { 
         setIsInView(true);
         observer.disconnect();
       }

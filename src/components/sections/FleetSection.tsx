@@ -192,13 +192,12 @@ export default function FleetSection({ dict }: { dict: Dictionary['fleet'] }) {
             className="relative w-full max-w-6xl h-[85vh]" 
             onClick={(e) => e.stopPropagation()}
           >
-            <Image 
-              src={photos[selectedIndex]} 
-              alt={`Full screen view ${selectedIndex + 1}`} 
-              fill 
-              className="object-contain"
-              priority
-            />
+      <Image 
+  src={photos[selectedIndex]!} 
+  alt={`Full screen view ${selectedIndex + 1}`} 
+  fill 
+  className="object-contain"
+/>
           </div>
         </div>
       )}
