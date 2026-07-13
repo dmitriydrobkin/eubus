@@ -9,6 +9,18 @@ import { Dictionary } from '@/i18n/dictionaries';
 export default function Header({ dict }: { dict: Dictionary['nav'] }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isContactsOpen, setIsContactsOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isContactsOpen || isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isContactsOpen, isMobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,16 +39,7 @@ export default function Header({ dict }: { dict: Dictionary['nav'] }) {
   }, []);
 
   // Блокировка скролла при открытом попапе
-  useEffect(() => {
-    if (isContactsOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isContactsOpen]);
+
 
   return (
     <>
@@ -72,6 +75,9 @@ export default function Header({ dict }: { dict: Dictionary['nav'] }) {
             <button onClick={() => setIsContactsOpen(true)} className="md:hidden text-ivory-text">
               <span className="material-symbols-outlined text-[28px]">phone_in_talk</span>
             </button>
+            <button onClick={() => setIsMobileMenuOpen(true)} className="md:hidden text-ivory-text">
+              <span className="material-symbols-outlined text-[32px]">menu</span>
+            </button>
             <a href="#contact-form" className="hidden sm:inline-block px-6 py-2 border border-primary-fixed/30 bg-primary-container/10 rounded-full text-primary-fixed font-body hover:bg-primary-container/20 transition-colors duration-300 scale-95 hover:scale-100">
               {/* @ts-ignore - dictionary keys are manually added */}
               {dict.callback || 'Зворотний дзвінок'}
@@ -79,6 +85,55 @@ export default function Header({ dict }: { dict: Dictionary['nav'] }) {
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Modal */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:hidden">
+          <div className="absolute inset-0 bg-[#0d0e15]/80 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)}></div>
+          <div className="relative bg-surface-container rounded-2xl w-full max-w-sm border border-outline-variant/30 shadow-2xl p-6 animate-fade-in-down max-h-[90vh] overflow-y-auto">
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="absolute top-4 right-4 text-ash-text hover:text-ivory-text transition-colors"
+            >
+              <span className="material-symbols-outlined">close</span>
+            </button>
+            
+            <h2 className="font-display text-2xl font-bold text-ivory-text mb-6 text-center">Меню</h2>
+            
+            <div className="flex flex-col gap-3">
+              <a href="#schedule" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-4 rounded-lg bg-surface-variant border border-white/5 hover:border-primary-fixed/50 transition-colors">
+                <span className="material-symbols-outlined text-primary-fixed">schedule</span>
+                <span className="font-subheading text-ivory-text">{dict.schedule}</span>
+              </a>
+              <a href="#vip" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-4 rounded-lg bg-surface-variant border border-white/5 hover:border-primary-fixed/50 transition-colors">
+                <span className="material-symbols-outlined text-primary-fixed">star</span>
+                <span className="font-subheading text-ivory-text">{dict.vip}</span>
+              </a>
+              <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-4 rounded-lg bg-surface-variant border border-white/5 hover:border-primary-fixed/50 transition-colors">
+                <span className="material-symbols-outlined text-primary-fixed">directions_bus</span>
+                <span className="font-subheading text-ivory-text">{dict.services}</span>
+              </a>
+              <a href="#fleet" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-4 rounded-lg bg-surface-variant border border-white/5 hover:border-primary-fixed/50 transition-colors">
+                <span className="material-symbols-outlined text-primary-fixed">directions_car</span>
+                <span className="font-subheading text-ivory-text">Автопарк</span>
+              </a>
+              <a href="#reviews" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-4 rounded-lg bg-surface-variant border border-white/5 hover:border-primary-fixed/50 transition-colors">
+                <span className="material-symbols-outlined text-primary-fixed">forum</span>
+                <span className="font-subheading text-ivory-text">Відгуки</span>
+              </a>
+              <button onClick={() => { setIsMobileMenuOpen(false); setIsContactsOpen(true); }} className="flex w-full items-center gap-3 p-4 rounded-lg bg-surface-variant border border-white/5 hover:border-primary-fixed/50 transition-colors text-left">
+                <span className="material-symbols-outlined text-primary-fixed">support_agent</span>
+                <span className="font-subheading text-ivory-text">{dict.contacts}</span>
+              </button>
+
+              <a href="#contact-form" onClick={() => setIsMobileMenuOpen(false)} className="mt-4 w-full px-6 py-4 border border-primary-fixed/30 bg-primary-container/10 rounded-xl text-primary-fixed font-body hover:bg-primary-container/20 transition-colors duration-300 text-center font-semibold text-lg block">
+                {/* @ts-ignore */}
+                {dict.callback || 'Зворотний дзвінок'}
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Contacts Modal */}
       {isContactsOpen && (

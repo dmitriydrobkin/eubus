@@ -48,9 +48,9 @@ export default function Footer({ dict, navDict }: { dict: Dictionary['footer'], 
           <span className="material-symbols-outlined">schedule</span>
           <span className="font-caption text-[10px]">{navDict.schedule}</span>
         </a>
-        <a href="#services" className="flex flex-col items-center gap-1 text-ash-text">
-          <span className="material-symbols-outlined">directions_bus</span>
-          <span className="font-caption text-[10px]">{navDict.services}</span>
+        <a href="#fleet" className="flex flex-col items-center gap-1 text-ash-text">
+          <span className="material-symbols-outlined">directions_car</span>
+          <span className="font-caption text-[10px]">Автопарк</span>
         </a>
         <a href="#vip" className="flex flex-col items-center gap-1 text-ash-text">
           <span className="material-symbols-outlined">star</span>
