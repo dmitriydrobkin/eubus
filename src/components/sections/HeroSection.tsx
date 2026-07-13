@@ -23,14 +23,18 @@ export default function HeroSection({ dict }: { dict: Dictionary['hero'] }) {
               </span>
             </div>
 
-            {/* Главный заголовок */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1]">
-              {dict.titleLine1} <br className="hidden sm:block" />
-              <span className="text-[#5266eb] mr-2">{dict.titleLine2}</span>
-              <span className="inline-block relative w-[100px] h-[36px] sm:w-[140px] sm:h-[48px] lg:hidden align-middle -mt-2">
-                <Image src="/premium-bus-transparent.png" alt="Bus" fill className="object-contain object-left scale-[1.3] sm:scale-150 origin-left" />
-              </span>
-            </h1>
+            {/* Главный заголовок и Мобильный Автобус */}
+            <div className="relative flex items-center justify-between">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] max-w-[60%] sm:max-w-none relative z-10">
+                {dict.titleLine1} <br className="hidden sm:block" />
+                <span className="text-[#5266eb] block mt-1 lg:mt-0">{dict.titleLine2}</span>
+              </h1>
+              
+              {/* Mobile Bus Image */}
+              <div className="absolute right-[-20px] sm:right-0 top-1/2 -translate-y-1/2 w-[45%] h-[140px] sm:w-[220px] lg:hidden z-0 pointer-events-none">
+                <Image src="/premium-bus-transparent.png" alt="Bus" fill className="object-contain object-right scale-[1.4] sm:scale-125 origin-right" />
+              </div>
+            </div>
 
             {/* Подзаголовок */}
             <p className="font-sans text-lg sm:text-xl text-[#c5c5d7] leading-relaxed max-w-xl">
