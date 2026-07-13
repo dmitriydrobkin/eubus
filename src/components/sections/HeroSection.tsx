@@ -26,7 +26,10 @@ export default function HeroSection({ dict }: { dict: Dictionary['hero'] }) {
             {/* Главный заголовок */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1]">
               {dict.titleLine1} <br className="hidden sm:block" />
-              <span className="text-[#5266eb]">{dict.titleLine2}</span>
+              <span className="text-[#5266eb] mr-2">{dict.titleLine2}</span>
+              <span className="inline-block relative w-[100px] h-[36px] sm:w-[140px] sm:h-[48px] lg:hidden align-middle -mt-2">
+                <Image src="/premium-bus-transparent.png" alt="Bus" fill className="object-contain object-left scale-[1.3] sm:scale-150 origin-left" />
+              </span>
             </h1>
 
             {/* Подзаголовок */}
