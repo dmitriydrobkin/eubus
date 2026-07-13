@@ -25,14 +25,21 @@ export default function HeroSection({ dict }: { dict: Dictionary['hero'] }) {
 
             {/* Главный заголовок и Мобильный Автобус */}
             <div className="relative flex items-center justify-between">
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] max-w-[60%] sm:max-w-none relative z-10">
-                {dict.titleLine1} <br className="hidden sm:block" />
-                <span className="text-[#5266eb] block mt-1 lg:mt-0">{dict.titleLine2}</span>
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] w-[60%] sm:w-auto relative z-10">
+                {/* Desktop Version */}
+                <span className="hidden sm:inline">{dict.titleLine1}</span>
+                <br className="hidden sm:block" />
+                <span className="hidden sm:inline text-[#5266eb] mt-1 lg:mt-0">{dict.titleLine2}</span>
+                
+                {/* Mobile Version: 3 lines */}
+                <span className="sm:hidden block">{dict.titleLine1.split(' ')[0]}</span>
+                <span className="sm:hidden block">{dict.titleLine1.split(' ')[1]} {dict.titleLine2.split(' ')[0]}</span>
+                <span className="sm:hidden block text-[#5266eb] mt-1">{dict.titleLine2.split(' ').slice(1).join(' ')}</span>
               </h1>
               
               {/* Mobile Bus Image */}
-              <div className="absolute right-[-20px] sm:right-0 top-1/2 -translate-y-1/2 w-[45%] h-[140px] sm:w-[220px] lg:hidden z-0 pointer-events-none">
-                <Image src="/premium-bus-transparent.png" alt="Bus" fill className="object-contain object-right scale-[1.4] sm:scale-125 origin-right" />
+              <div className="absolute right-0 bottom-0 translate-y-8 w-[160px] h-[100px] sm:w-[220px] lg:hidden z-0 pointer-events-none">
+                <Image src="/premium-bus-transparent.png" alt="Bus" fill className="object-contain object-right-bottom scale-[1.5] sm:scale-125 origin-bottom-right" />
               </div>
             </div>
 
