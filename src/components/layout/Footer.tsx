@@ -6,7 +6,7 @@ export default function Footer({ dict, navDict }: { dict: Dictionary['footer'], 
   return (
     <>
       {/* Standalone Footer Section (Block 7) */}
-      <footer className="bg-surface w-full pt-16 pb-8 border-t border-outline-variant mt-section-gap">
+      <footer className="bg-surface w-full pt-16 pb-24 md:pb-8 border-t border-outline-variant mt-section-gap">
         <div className="max-w-container-max mx-auto px-8">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             {/* Brand Column */}
