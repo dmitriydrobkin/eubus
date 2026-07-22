@@ -28,7 +28,7 @@ export default function Icon() {
           fontFamily: 'system-ui, sans-serif'
         }}
       >
-        M<span style={{ color: '#FF5A36' }}>.</span>
+        EU
       </div>
     ),
     {

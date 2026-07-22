@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: { lang: string } })
   
   const settings = await getSiteSettings();
   const isUk = params.lang === 'uk';
-  const defaultTitle = 'Шаблон | Template';
-  const defaultDesc = 'Описание шаблона';
+  const defaultTitle = 'EU BUS - Прямі та комфортні рейси Київ — Варшава';
+  const defaultDesc = 'Пасажирські перевезення EU BUS. Комфортні рейси туди і назад.';
   
   const title = settings.site_title || defaultTitle;
   const description = settings.site_description || defaultDesc;
